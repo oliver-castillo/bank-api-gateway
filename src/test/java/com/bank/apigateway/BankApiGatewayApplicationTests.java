@@ -8,6 +8,7 @@ class BankApiGatewayApplicationTests {
 
 	@Test
 	void contextLoads() {
+		// Add tests
 	}
 
 }
