@@ -33,3 +33,5 @@ build/
 .vscode/
 
 .run/
+
+src/main/resources/certs

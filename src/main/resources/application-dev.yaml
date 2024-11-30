@@ -11,7 +11,7 @@ spring:
     gateway:
       routes[0]:
         id: client-service
-        uri: http://localhost:9001
+        uri: lb://bank-client-microservice
         predicates:
           - Path=/api/v1/clients/**
       routes[1]:
@@ -21,10 +21,14 @@ spring:
           - Path=/api/v1/products/**
       routes[2]:
         id: transaction-service
-        uri: http://localhost:9002
+        uri: lb://bank-transaction-microservice
         predicates:
           - Path=/api/v1/transactions/**
   security:
     user:
       name: user
       password: password
+
+rsa:
+  private-key: classpath:certs/private.pem
+  public-key: classpath:certs/public.pem
